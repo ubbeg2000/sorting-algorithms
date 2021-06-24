@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="time"></h1>
+    <pre id="result">
+    </pre>
+    <script>
+      async function pantat() {
+        const now = new Date()
+        const res = fetch("https://www.lncircle/api/user/?limit=10", {
+          headers: {
+            "Access-Control-Allow-Origin": "*"
+          }
+        })
+        if (res.ok) {
+          const data = await res.json()
+          document.getElementById("result").innerText = data
+          const noq = new Date()
+          document.getElementById("time").innerText = Math.round(noq.getMilliseconds() - now.getMilliseconds()) / 1000
+        }
+      }
+      window.onload = function() {
+        setInterval(() => {
+          pantat()
+        }, 1000)
+      }
+    </script>
+  </body>
+</html>

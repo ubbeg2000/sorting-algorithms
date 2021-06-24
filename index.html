@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Algorithms</title>
+    <script src="ArrayBar.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="headline">
+        <h1>Sorting Algorithms</h1>
+        <small>A shitty visualizer bau pantat</small>
+      </div>
+      <div id="array-container" class="array-container"></div>
+      <div class="controls">
+        <div class="control">
+          <label id="array-length-label" for="array-length"></label>
+          <input
+            id="array-length"
+            name="array-length"
+            class="range-input"
+            type="range"
+            value="50"
+            min="2"
+            max="200"
+          />
+        </div>
+        <div class="control">
+          <label id="sort-delay-label" for="sort-delay">Sorting Delay</label>
+          <input
+            id="sort-delay"
+            name="sort-delay"
+            class="range-input"
+            type="range"
+            value="50"
+            min="4"
+            max="1000"
+          />
+        </div>
+        <div class="control">
+          <label for="sort-algorithm">Sorting Algorithm</label>
+          <select name="sort-algorithm" id="sort-algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="counting">Counting Sort</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="generate-button">Generate New Array</label>
+          <button name="generate-button" class="button" id="generate-button">
+            Generate
+          </button>
+        </div>
+        <div class="control">
+          <label for="sort-button">Sort Array</label>
+          <button name="sort-button" class="button" id="sort-button" onclick="bubbleSort()">
+            Sort
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
